@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ruta
- * Date: 18.4.13
- * Time: 21.23
- */
 
 namespace App\Controller;
 
@@ -20,7 +14,7 @@ class StudentListController extends Controller
     /**
      * @Route("/students", name="student_list")
      */
-    public function students()
+    public function listStudentsAction()
     {
         $dataJson = file_get_contents(self::STUDENT_DATA);
         $data = json_decode($dataJson, true);

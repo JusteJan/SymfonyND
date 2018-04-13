@@ -5,7 +5,12 @@
     <ul class="list-group">
         {% for project, people in studentList %}
             {% for student in people.members %}
-                <li>{{ student }}</li>
+                <li class="list-group-item">
+                    <a href="{{ path('student_info', {'utm_source': 'akademija',
+                                                 'utm_campaign': people.mentor,
+                                                 'utm_term': student,
+                                                 'utm_content': project }) }}">{{ student }}</a>
+                </li>
             {% endfor %}
         {% endfor %}
     </ul>

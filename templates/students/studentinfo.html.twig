@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <table class="table">
+        <tbody>
+        <tr>
+            <th scope="row">Komanda</th>
+            <td>{{ project }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Mentorius</th>
+            <td>{{ mentor }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Laimingasis(-oji)</th>
+            <th>{{ student }}</th>
+        </tr>
+        </tbody>
+    </table>
+    {% if student == 'Justė' %}
+        <div class="alert alert-success" role="alert">
+            Dešimt balų
+        </div>
+    {% else %}
+        <div class="alert alert-danger" role="alert">
+            Gal pasiseks kitą kartą
+        </div>
+    {% endif %}
+    <a href="{{ path('student_list') }}">Visi dalyviai</a>
+{% endblock %}
