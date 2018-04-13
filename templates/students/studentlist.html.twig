@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body%}
+    <h1 class="display-5">Studentai</h1>
+    <ul class="list-group">
+        {% for project, people in studentList %}
+            {% for student in people.members %}
+                <li>{{ student }}</li>
+            {% endfor %}
+        {% endfor %}
+    </ul>
+{% endblock %}
