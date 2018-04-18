@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-1">
+        </div>
+        <div class="col-11">
+            <div class="form-group row">
+                <input type="text" placeholder="name" id="name"\>
+                <span id="name-validation" data-path="{{ path('validation', {'key': 'name' }) }}"></span>
+            </div>
+            <div class="form-group row">
+                <input type="text" placeholder="team" id="team" \>
+                <span id="team-validation" data-path="{{ path('validation', {'key': 'team' }) }}"></span>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+{% block javascripts %}
+    <script src="{{ asset('build/js/validation.js') }}"></script>
+    {{ parent() }}
+{% endblock %}
