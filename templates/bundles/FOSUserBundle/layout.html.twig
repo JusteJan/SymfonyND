@@ -1,7 +1,5 @@
 {% extends 'base.html.twig' %}
-
 {% block body %}
-    {# Copy-paste from vendor/friendsofsymfony/user-bundle/Resources/views/layout.html.twig #}
     <div>
         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
             {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
@@ -23,12 +21,11 @@
         {% endfor %}
     {% endif %}
 
-    <div>
+    <div class="jumbotron">
         {% block fos_user_content %}
         {% endblock fos_user_content %}
     </div>
 
-    {# Added custom code #}
     <div class="jumbotron">
         <a class="btn btn-info btn-lg" href="{{ path('home') }}">My home</a>
     </div>
